@@ -1,0 +1,17 @@
+
+<%if @ingredients.present? %>
+<% @ingredients.each do |ingredient| %>
+	<h3><u><%= ingredient.IngredientName %></u></h3>
+	<button class="button">
+	<%= image_tag(ingredient.IngredientImage, :width => '80', :height =>'80' ) %>
+	<br/>
+	<h3><%= "ADD" %></h3>
+	</button>
+	<div><%= truncate(ingredient.IngredientDescription, :lenght => 25) %></div>
+	
+
+	<br>
+	<hr>
+	<br>
+	<% end %>
+	<% end %>
