@@ -29,7 +29,7 @@ body {
    
    position: absolute;
    text-align: center;
-   width: 100%;
+   width: 50%;
     top: 25%;
  
     color: white;
@@ -96,7 +96,7 @@ head {
 .social {
     list-style: outside none none;
     position: absolute;
-    top:30px;
+    top:22px;
     right: 0;
 }
 .socialitem {
@@ -119,7 +119,6 @@ head {
     background-repeat: no-repeat;
     height: 55%;
     
-    
     margin-top:0;
     
     width: 100%;
@@ -128,14 +127,14 @@ head {
 
 /* unvisited link */
 .menuitem a:link {
-    color: #5a5b5a;
+  color: #5a5b5a;  
 }
 
 /* mouse over link */
 .menuitem a:hover {
 	text-decoration: none;
         border-bottom: 3px solid;
-        border-bottom-color: #5a5b5a;
+        border-bottom-color: red;
     color: #63a163;
 }
 

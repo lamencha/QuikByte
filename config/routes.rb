@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  resources :ingredients
   get 'users/show'
 
   devise_for :users, controllers: { registrations: "registrations" }
