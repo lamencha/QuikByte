@@ -44,7 +44,7 @@
         <td>   <br/><button class="button">
 	<%= image_tag(ingredient.IngredientImage, :width => '80', :height =>'80' ) %>
 	<br/>
-	<h3><%= "ADD" %></h3>
+	<h3><%= link_to 'ADD', new_users_has_ingredient_path %></h3>
 	</button></td>
         <td><%= link_to 'Show', ingredient %></td>
         <td><%= link_to 'Edit', edit_ingredient_path(ingredient) %></td>

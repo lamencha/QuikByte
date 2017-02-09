@@ -37,6 +37,8 @@ gem 'bcrypt-ruby', '3.1.1.rc1', :require => 'bcrypt'
 # gem 'capistrano-rails', group: :development
 gem 'ransack'
 gem 'will_paginate', github: 'jonatack/will_paginate'
+ gem 'schema_to_scaffold'
+ gem 'composite_primary_keys', '=9.0.6'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

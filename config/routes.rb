@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :users_has_ingredients
   resources :ingredients
   get 'users/show'
 

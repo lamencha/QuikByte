@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170126184934) do
+ActiveRecord::Schema.define(version: 20170201235711) do
+
+  create_table "ingredient", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "IngredientName",        limit: 45
+    t.string "IngredientDescription", limit: 120
+    t.string "IngredientImage",       limit: 45
+  end
 
   create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title"
@@ -18,6 +24,23 @@ ActiveRecord::Schema.define(version: 20170126184934) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.integer  "user_id"
+  end
+
+  create_table "recipe", primary_key: "RecipeID", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "RecipeName",        limit: 45,  null: false
+    t.string "RecipeDescription", limit: 45
+    t.string "RecipeImage",       limit: 45
+    t.string "VideoURL",          limit: 120, null: false
+    t.string "Instructions",      limit: 250
+    t.string "PrepTime",          limit: 45
+    t.string "CookTime",          limit: 45
+  end
+
+  create_table "recipe_has_ingredient", primary_key: ["recipe_RecipeID", "ingredient_id"], force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "recipe_RecipeID", null: false
+    t.integer "ingredient_id",   null: false
+    t.index ["ingredient_id"], name: "fk_recipe_has_ingredient_ingredient1_idx", using: :btree
+    t.index ["recipe_RecipeID"], name: "fk_recipe_has_ingredient_recipe1_idx", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -43,4 +66,24 @@ ActiveRecord::Schema.define(version: 20170126184934) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  create_table "users_has_ingredient", primary_key: ["users_id", "ingredient_id"], force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "users_id",      null: false
+    t.integer "ingredient_id", null: false
+    t.index ["ingredient_id"], name: "fk_users_has_ingredient_ingredient1_idx", using: :btree
+    t.index ["users_id"], name: "fk_users_has_ingredient_users_idx", using: :btree
+  end
+
+  create_table "users_has_recipe", primary_key: ["users_id", "recipe_RecipeID"], force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "users_id",        null: false
+    t.integer "recipe_RecipeID", null: false
+    t.index ["recipe_RecipeID"], name: "fk_users_has_recipe_recipe1_idx", using: :btree
+    t.index ["users_id"], name: "fk_users_has_recipe_users1_idx", using: :btree
+  end
+
+  add_foreign_key "recipe_has_ingredient", "ingredient", name: "fk_recipe_has_ingredient_ingredient1"
+  add_foreign_key "recipe_has_ingredient", "recipe", column: "recipe_RecipeID", primary_key: "RecipeID", name: "fk_recipe_has_ingredient_recipe1"
+  add_foreign_key "users_has_ingredient", "ingredient", name: "fk_users_has_ingredient_ingredient1"
+  add_foreign_key "users_has_ingredient", "users", column: "users_id", name: "fk_users_has_ingredient_users"
+  add_foreign_key "users_has_recipe", "recipe", column: "recipe_RecipeID", primary_key: "RecipeID", name: "fk_users_has_recipe_recipe1"
+  add_foreign_key "users_has_recipe", "users", column: "users_id", name: "fk_users_has_recipe_users1"
 end
