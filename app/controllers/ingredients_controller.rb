@@ -7,11 +7,16 @@ class IngredientsController < ApplicationController
   def index
    @q = Ingredient.ransack(params[:q])
   @Ingredients = @q.result(distinct: true)
+  @ingredient = Ingredient.all
+  
+
+
   end
 
   # GET /ingredients/1
   # GET /ingredients/1.json
   def show
+    
   end
 
   # GET /ingredients/new
@@ -44,8 +49,10 @@ class IngredientsController < ApplicationController
   def update
     respond_to do |format|
       if @ingredient.update(ingredient_params)
+          @users_has_ingredient = @ingredient.update(ingredient_params)
         format.html { redirect_to @ingredient, notice: 'Ingredient was successfully updated.' }
         format.json { render :show, status: :ok, location: @ingredient }
+       
       else
         format.html { render :edit }
         format.json { render json: @ingredient.errors, status: :unprocessable_entity }

@@ -30,12 +30,13 @@ body {
    position: absolute;
    text-align: center;
    width: 100%;
-    top: 25%;
+    top: 17%;
  
     color: white;
     z-index: 1;
     font-size: 300%;
     text-shadow: 50%;
+    
 }
 
 head {
@@ -114,12 +115,12 @@ head {
     text-decoration: none;
 }
 .banner {
-    background-image: url("banner/BAN2.png");
+    background-image: url("banner/BANs.png");
     position: relative;
     background-repeat: no-repeat;
     height: 55%;
     
-    margin-top:0;
+    margin-top: 0;
     
     width: 100%;
 }
@@ -150,7 +151,7 @@ head {
 
 
 .wrapper {
-	height: 550px;
+	height: 350px;
 }
 
 
@@ -173,7 +174,7 @@ opacity: 0.70;
     
 .wrapper1
  {
- 	height: 460px;
+ 	height: 300px;
 }
 
 .who button{
