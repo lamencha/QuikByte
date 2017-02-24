@@ -1,0 +1,82 @@
+
+.logo2 {
+    height: 80px;
+    margin-top: 4em;
+}
+.log-in-form2 {
+}
+.float-left a {
+    background-image: url("http://www.jpink.co.uk/images/work/active-logo1.gif");
+    background-repeat: no-repeat;
+    background-size: 120px auto;
+    display: block;
+    height: 70px;
+    width: 120px;
+}
+.float-right a {
+    color: #555;
+    font-weight: bold;
+    padding: 0.1em 1em;
+}
+.float-right a:first-child {
+    border-right: 1px solid;
+}
+form.large-6 {
+    padding: 3em 1em;
+}
+.content2 {
+    border-radius: 4px;
+    box-shadow: 0 0 5px 2px #ddd;
+    padding: 5px;
+}
+.content2 .large-5 {
+    border-left: 1px solid #aaa;
+    color: #555;
+    height: 27em;
+    padding-top: 3em;
+}
+.content2 .large-5 a {
+    display: block;
+    font-size: 0.8rem;
+    margin-bottom: 0.5em;
+}
+.content2 .large-5 ul li {
+    font-size: 0.8em;
+}
+.content2 .large-5 ul li a {
+    color: #555;
+    display: inline;
+    text-decoration: underline;
+}
+.why2 {
+    background-color: #eee;
+    height: 35em;
+    padding: 1em;
+}
+.content .large-5 p {
+    margin-bottom: 0.5em;
+}
+.log-in-form2 .floatLeft {
+    font-size: 0.7rem;
+}
+.logo2 .float-right {
+    margin-top: 3em;
+}
+footer2 {
+    padding: 2em 0;
+}
+footer2 .large-12 a {
+    color: #555;
+}
+footer2 .large-12 a:not(:last-child) {
+    border-right: 1px solid;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+footer2 .copyright {
+    padding: 2em 0;
+}
+footer2 .copyright p {
+    color: #555;
+    font-size: 0.8rem;
+}
